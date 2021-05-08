@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>TLE - Two Line Element</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let s of satellites">
+    <ion-item (click)="showData(s.id)">
+      <ion-text><b>{{ s.name | uppercase }}</b></ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>

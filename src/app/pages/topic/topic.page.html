@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let d of data | slice:0:slice ">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ d[2] | removehtml | titlecase }}</ion-card-title>
+        <ion-card-subtitle>{{ d[5] | titlecase }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-img style="margin: 5px" src="{{d[10]}}"></ion-img>
+
+        <ion-text>{{ d[3] | slice:0:100 }} ...</ion-text>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

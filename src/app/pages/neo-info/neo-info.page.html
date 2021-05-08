@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ neo.name_limited }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">{{ neo.name }}</ion-card-title>
+      <ion-card-subtitle style="display: flex; justify-content: space-between">
+        <ion-text>
+          <p>ID: {{ neo.id }}</p>
+        </ion-text>
+
+        <ion-text>
+          <p>
+            Harazdous: {{ neo.is_potentially_hazardous_asteroid ? "YES" : "NO"
+            }}
+          </p>
+        </ion-text>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-title class="ion-text-center">Estimated Diameter</ion-title>
+      <ion-text style="margin: 10px">
+        <p><b>In Kilometers</b></p>
+        <p>
+          <b>Max Diameter:</b> {{ edk.estimated_diameter_max | number: '.1-2' }}
+        </p>
+        <p>
+          <b>Min Diameter:</b> {{ edk.estimated_diameter_min | number: '.1-2' }}
+        </p>
+      </ion-text>
+      <ion-text style="margin: 10px">
+        <p><b>In Meters</b></p>
+        <p>
+          <b>Max Diameter:</b> {{ edm.estimated_diameter_max | number: '.1-2' }}
+        </p>
+        <p>
+          <b>Min Diameter:</b> {{ edm.estimated_diameter_min | number: '.1-2' }}
+        </p>
+      </ion-text>
+      <ion-text style="margin: 10px">
+        <p><b>In Feets</b></p>
+        <p>
+          <b>Max Diameter:</b> {{ edf.estimated_diameter_max | number: '.1-2' }}
+        </p>
+        <p>
+          <b>Min Diameter:</b> {{ edf.estimated_diameter_min | number: '.1-2' }}
+        </p>
+      </ion-text>
+      <ion-text style="margin: 10px">
+        <p><b>In Miles</b></p>
+        <p>
+          <b>Max Diameter:</b> {{ edmi.estimated_diameter_max | number: '.1-2'
+          }}
+        </p>
+        <p>
+          <b>Min Diameter:</b> {{ edmi.estimated_diameter_min | number: '.1-2'
+          }}
+        </p>
+      </ion-text>
+      <ion-title class="ion-text-center">Orbital Data</ion-title>
+      <ion-text>
+        <p>
+          <b>Aphelion Distance:</b> {{ orbitalData.aphelion_distance | number:
+          '.1-3' }}
+        </p>
+        <p>
+          <b>Ascending Node Distance:</b> {{
+          orbitalData.ascending_node_longitude | number: '.1-3'}}
+        </p>
+        <p><b>Equinox:</b> {{ orbitalData.equinox }}</p>
+        <p>
+          <b>First Observation Date:</b> {{ orbitalData.first_observation_date |
+          date }}
+        </p>
+        <p>
+          <b>Orbit Determination Date:</b> {{
+          orbitalData.orbit_determination_date | date }}
+        </p>
+        <p>
+          <b>Orbital Period:</b> {{ orbitalData.orbital_period | number: '.1-3'
+          }}
+        </p>
+        <p>
+          <b>Perihelion Argument:</b> {{ orbitalData.perihelion_argument |
+          number: '.1-3' }}
+        </p>
+        <p>
+          <b>Perihelion Distance:</b> {{ orbitalData.perihelion_distance |
+          number: '.1-3' }}
+        </p>
+        <p>
+          <b>Perihelion Time:</b> {{ orbitalData.perihelion_time | date:"HH:mm"
+          }}
+        </p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

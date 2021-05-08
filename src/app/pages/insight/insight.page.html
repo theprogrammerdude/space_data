@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Insight - Mars Weather Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-title class="ion-text-center">
+      <p><b>Mars Weather Data</b></p>
+    </ion-card-title>
+    <ion-img style="margin: 10" src="../../assets/mars.png"></ion-img>
+    <ion-card-header>
+      <ion-card-title>
+        <b>Season:</b> {{ weatherData.Season | titlecase}}
+      </ion-card-title>
+      <ion-card-subtitle>
+        <b>Northern Season:</b> {{ weatherData.Northern_season | titlecase}}
+      </ion-card-subtitle>
+      <ion-card-subtitle>
+        <b>Southern Season:</b> {{ weatherData.Southern_season | titlecase}}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        <p><b>First Observation:</b> {{ weatherData.First_UTC | date }}</p>
+        <p><b>Last Observation:</b> {{ weatherData.Last_UTC | date }}</p>
+      </ion-text>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-text>
+        <p><b>Atmospheric Pressure</b></p>
+        <p><b>Average Pressure:</b> {{ pre.av }} Pa</p>
+        <p><b>No. of Recorded Samples:</b> {{ pre.ct }}</p>
+        <p><b>Minimum Pressure:</b> {{ pre.mn }} Pa</p>
+        <p><b>Maximum Pressure:</b> {{ pre.mx }} Pa</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
