@@ -9,8 +9,11 @@
 
 <ion-content>
   <ion-list *ngFor="let s of satellites">
-    <ion-item (click)="showData(s.id)">
-      <ion-text><b>{{ s.name | uppercase }}</b></ion-text>
-    </ion-item>
+    <ion-card (click)="showData(s.id)">
+      <ion-card-header>
+        <ion-card-title><b>{{ s.name | uppercase }}</b></ion-card-title>
+      </ion-card-header>
+      <ion-card-content> {{ s.desc }} </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>

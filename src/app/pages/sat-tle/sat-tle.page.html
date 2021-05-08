@@ -19,12 +19,105 @@
         <p><b>Two Line Data</b></p>
       </ion-text>
       <ion-text>
-        <p><b>Line 1</b></p>
-        <p>{{ satData.line1 }}</p>
-      </ion-text>
-      <ion-text>
-        <p><b>Line 2</b></p>
-        <p>{{ satData.line2 }}</p>
+        <div *ngFor="let l of line1">
+          <p>
+            <span style="color: green">Line - {{ l[0] }}</span><br />
+            <span style="color: blue">
+              Satellite Number - {{ l[2] }}{{ l[3] }}{{ l[4] }}{{ l[5] }}{{ l[6]
+              }}
+            </span>
+            <br />
+            <span style="color: blueviolet"> Classification - {{ l[7] }} </span>
+            <br />
+            <span style="color: purple">
+              Launch Year - {{ l[9] }}{{ l[10] }}
+            </span>
+            <br />
+            <span style="color: cornflowerblue">
+              Launch Number of Year - {{ l[11] }}{{ l[12] }}{{ l[13] }}
+            </span>
+            <br />
+            <span style="color: coral">Launch Piece - {{ l[14] }}</span><br />
+            <!-- <span style="color: brown">{{ l[15] }}{{ l[16] }}</span><br /> -->
+            <span style="color: teal">
+              Epoch - {{ l[18] }}{{ l[19] }}{{ l[20] }}{{ l[21] }}{{ l[22] }}{{
+              l[23] }}{{ l[24] }}{{ l[25] }}{{ l[26] }}{{ l[27] }}{{ l[28] }}{{
+              l[29] }}{{ l[30] }}{{ l[31] }}
+            </span>
+            <br />
+            <span style="color: chocolate">
+              First time derivative of mean motion - {{ l[33] }}{{ l[34] }}{{
+              l[35] }}{{ l[36] }}{{ l[37] }}{{ l[38] }}{{ l[39] }}{{ l[40] }}{{
+              l[41] }}{{ l[42] }}
+            </span>
+            <br />
+            <span style="color: darkslateblue">
+              Second time derivative of mean motion - {{ l[44] }}{{ l[45] }}{{
+              l[46] }}{{ l[47] }}{{ l[48] }}{{ l[49] }}{{ l[50] }}{{ l[51] }}
+            </span>
+            <br />
+            <span style="color: orangered">
+              BSTAR Drag term - {{ l[53] }}{{ l[54] }}{{ l[55] }}{{ l[56] }}{{
+              l[57] }}{{ l[58] }}{{ l[59] }}{{ l[60] }}
+            </span>
+            <br />
+            <span style="color: crimson"> Ephemeris type - {{ l[62] }} </span>
+            <br />
+            <span style="color: violet">
+              Element number - {{ l[64] }}{{ l[65] }}{{ l[66] }}{{ l[67] }}{{
+              l[68] }}
+            </span>
+            <span style="color: violet"> Checksum - {{ l[69] }} </span>
+          </p>
+        </div>
+        <br />
+        <div *ngFor="let l of line2">
+          <p>
+            <span style="color: darkblue">Line - {{ l[0] }}</span><br />
+            <span style="color: darkgoldenrod">
+              Satellite Number - {{ l[2] }}{{ l[3] }}{{ l[4] }}{{ l[5] }}{{ l[6]
+              }}
+            </span>
+            <br />
+            <span style="color: darkolivegreen">
+              Inclination - {{ l[9] }}{{ l[10] }}{{ l[11] }}{{ l[12] }}{{ l[13]
+              }}{{ l[14] }}{{ l[15] }}
+            </span>
+            <br />
+            <!-- <span style="color: brown">{{ l[15] }}{{ l[16] }}</span><br /> -->
+            <span style="color: darkorange">
+              Right ascension of the ascending node - {{ l[17] }}{{ l[18] }}{{
+              l[19] }}{{ l[20] }}{{ l[21] }}{{ l[22] }}{{ l[23] }}{{ l[24] }}
+            </span>
+            <br />
+            <span style="color: darkred">
+              Eccentricity - {{ l[25] }}{{ l[26] }}{{ l[27] }}{{ l[28] }}{{
+              l[29] }}{{ l[30] }}{{ l[31] }}{{ l[32] }}
+            </span>
+            <br />
+            <span style="color: darkmagenta">
+              Argument of perigee - {{ l[33] }}{{ l[34] }}{{ l[35] }}{{ l[36]
+              }}{{ l[37] }}{{ l[38] }}{{ l[39] }}{{ l[40] }}{{ l[41] }}{{ l[42]
+              }}
+            </span>
+            <br />
+            <span style="color: firebrick">
+              Mean anomaly - {{ l[43] }}{{ l[44] }}{{ l[45] }}{{ l[46] }}{{
+              l[47] }}{{ l[48] }}{{ l[49] }}{{ l[50] }}{{ l[51] }}
+            </span>
+            <br />
+            <span style="color: dodgerblue">
+              Mean motion - {{ l[52] }}{{ l[53] }}{{ l[54] }}{{ l[55] }}{{ l[56]
+              }}{{ l[57] }}{{ l[58] }}{{ l[59] }}{{ l[60] }}
+            </span>
+            <br />
+            <span style="color: forestgreen">
+              Revolution number - {{ l[64] }}{{ l[65] }}{{ l[66] }}{{ l[67] }}
+            </span>
+            <br />
+            <span style="color: midnightblue"> Checksum - {{ l[68] }} </span>
+          </p>
+        </div>
       </ion-text>
     </ion-card-content>
   </ion-card>

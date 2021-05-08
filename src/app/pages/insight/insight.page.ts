@@ -18,9 +18,9 @@ export class InsightPage implements OnInit {
         `https://api.nasa.gov/insight_weather/?api_key=${this.apiKey}&feedtype=json&ver=1.0`
       )
       .subscribe((data: any) => {
-        this.weatherData = data[861];
-        this.pre = data[861].PRE;
-        // console.log(this.pre);
+        // this.weatherData = data[861];
+        // this.pre = data[861].PRE;
+        console.log(data);
       });
   }
 

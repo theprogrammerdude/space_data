@@ -8,17 +8,23 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let d of data | slice:0:slice ">
-    <ion-card>
+  <ion-virtual-scroll [items]="data">
+    <ion-card *virtualItem="let d">
       <ion-card-header>
         <ion-card-title>{{ d[2] | removehtml | titlecase }}</ion-card-title>
         <ion-card-subtitle>{{ d[5] | titlecase }}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
         <ion-img style="margin: 5px" src="{{d[10]}}"></ion-img>
-
         <ion-text>{{ d[3] | slice:0:100 }} ...</ion-text>
       </ion-card-content>
     </ion-card>
-  </ion-list>
+  </ion-virtual-scroll>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="refresh($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more articles ..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

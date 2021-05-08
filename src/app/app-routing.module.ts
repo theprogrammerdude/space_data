@@ -4,13 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'neo',
+    redirectTo: 'tabs',
     pathMatch: 'full',
-  },
-  {
-    path: 'neo',
-    loadChildren: () =>
-      import('./pages/neo/neo.module').then((m) => m.NeoPageModule),
   },
   {
     path: 'neo-info/:id',
@@ -20,21 +15,9 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'tech-transfer',
-    loadChildren: () =>
-      import('./pages/tech-transfer/tech-transfer.module').then(
-        (m) => m.TechTransferPageModule
-      ),
-  },
-  {
     path: 'topic/:topic',
     loadChildren: () =>
       import('./pages/topic/topic.module').then((m) => m.TopicPageModule),
-  },
-  {
-    path: 'tle',
-    loadChildren: () =>
-      import('./pages/tle/tle.module').then((m) => m.TlePageModule),
   },
   {
     path: 'sat-tle/:id',
@@ -42,8 +25,9 @@ const routes: Routes = [
       import('./pages/sat-tle/sat-tle.module').then((m) => m.SatTlePageModule),
   },
   {
-    path: 'insight',
-    loadChildren: () => import('./pages/insight/insight.module').then( m => m.InsightPageModule)
+    path: 'tabs',
+    loadChildren: () =>
+      import('./pages/tabs/tabs.module').then((m) => m.TabsPageModule),
   },
 ];
 

@@ -3,14 +3,16 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ neo.name_limited }}</ion-title>
+    <ion-title><b>{{ neo.name_limited }}</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title class="ion-text-center">{{ neo.name }}</ion-card-title>
+      <ion-card-title class="ion-text-center">
+        <b>{{ neo.name }}</b>
+      </ion-card-title>
       <ion-card-subtitle style="display: flex; justify-content: space-between">
         <ion-text>
           <p>ID: {{ neo.id }}</p>
@@ -25,8 +27,9 @@
       </ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <ion-title class="ion-text-center">Estimated Diameter</ion-title>
-      <ion-text style="margin: 10px">
+      <ion-title class="ion-text-center"><b>Estimated Diameter</b></ion-title>
+      <br />
+      <ion-text style="margin: 0 0 10px 0">
         <p><b>In Kilometers</b></p>
         <p>
           <b>Max Diameter:</b> {{ edk.estimated_diameter_max | number: '.1-2' }}
@@ -64,7 +67,8 @@
           }}
         </p>
       </ion-text>
-      <ion-title class="ion-text-center">Orbital Data</ion-title>
+      <ion-title class="ion-text-center"><b>Orbital Data</b></ion-title>
+      <br />
       <ion-text>
         <p>
           <b>Aphelion Distance:</b> {{ orbitalData.aphelion_distance | number:
@@ -97,6 +101,14 @@
         </p>
         <p>
           <b>Perihelion Time:</b> {{ orbitalData.perihelion_time | date:"HH:mm"
+          }}
+        </p>
+        <br />
+        <p><b>Orbit Class Data</b></p>
+        <p><b>Orbit Class Type:</b> {{ orbitClass.orbit_class_type }}</p>
+        <p><b>Orbit Class Range:</b> {{ orbitClass.orbit_class_range }}</p>
+        <p>
+          <b>Orbit Class Description:</b> {{ orbitClass.orbit_class_description
           }}
         </p>
       </ion-text>

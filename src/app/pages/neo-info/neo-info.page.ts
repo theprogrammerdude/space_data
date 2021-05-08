@@ -18,6 +18,7 @@ export class NeoInfoPage implements OnInit {
   edm: any = {};
   edf: any = {};
   cad: any = [];
+  orbitClass: any = {};
   orbitalData: any = {};
 
   constructor(
@@ -39,7 +40,8 @@ export class NeoInfoPage implements OnInit {
         this.edmi = data.estimated_diameter.miles;
         this.edf = data.estimated_diameter.feet;
         this.orbitalData = data.orbital_data;
-        console.log(this.edk, this.edm, this.edmi, this.edf);
+        this.orbitClass = data.orbital_data.orbit_class;
+        console.log(this.orbitClass);
       });
   }
 

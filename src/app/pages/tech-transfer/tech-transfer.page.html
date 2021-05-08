@@ -8,9 +8,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let t of topics" (click)="gotoTopic(t.url)">
-      <ion-text>{{ t.title }}</ion-text>
-    </ion-item>
+  <ion-list *ngFor="let t of topics">
+    <ion-card (click)="gotoTopic(t.url)">
+      <ion-card-header>
+        <ion-card-title>{{ t.title }}</ion-card-title>
+        <ion-card-subtitle>{{ t.subtitle }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>{{ t.desc }}</ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>
